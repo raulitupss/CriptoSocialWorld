@@ -1,0 +1,36 @@
+<div class="login-wrapper">
+  <div class="login">
+      <section class="title">
+          <h3 class="welcome">Bienvenido a</h3>
+         Crypto Social World
+          <h5 class="hint">Inicie sesión o registrese para continuar</h5>
+      </section>
+      <div class="login-group">
+          <!-- <clr-select-container>
+              <label>User Role</label>
+              <select clrSelect name="type" >
+                  <option value="local">Local Users</option>
+                  <option value="admin">Administrator</option>
+              </select>
+          </clr-select-container> -->
+          <clr-input-container>
+              <label class="clr-sr-only">Nombre de Usuario</label>
+              <input type="text" autocomplete="username" name="username" clrInput placeholder="nombre de usuario" />
+          </clr-input-container>
+          <clr-password-container>
+              <label class="clr-sr-only">Contraseña</label>
+              <input type="password" autocomplete="current-password" name="password" clrPassword placeholder="Contraseña" />
+          </clr-password-container>
+          <clr-checkbox-wrapper>
+              <label>Recuerdame</label>
+              <input type="checkbox" name="rememberMe" clrCheckbox />
+          </clr-checkbox-wrapper>
+          <!-- <div class="error active">
+              Invalid user name or password
+          </div> -->
+
+          <button (click)="validarInicio()" class="btn btn-primary">Iniciar Sesión</button>
+          <a routerLink="/home" class="signup">Registarte para continuar</a>
+      </div>
+    </div>
+</div>

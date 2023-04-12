@@ -1,25 +1,29 @@
 <header class="header-6">
-  <div class="branding">
-      <a href="..." class="nav-link">
-          <span class="title">Clarity Design</span>
+    <div class="branding">
+      <a  routerLink="home" class="nav-link">
+        <span class="title">₿ CRYPTO WORLD</span>
       </a>
-  </div>
-  <div class="header-actions">
-      <button class="btn btn-primary" (click)="basic=true">
-          Log Out
-      </button>
-  </div>
-</header>
+    </div>
+    <div class="header-nav">
+      <a routerLink="home" class="active nav-link" aria-current="page"><span class="nav-text">home</span></a>
+      <a routerLink="seguidos" class="nav-link"><span class="nav-text">Mis seguidos</span></a>
+      <a routerLink="mensajes"class="nav-link"><span class="nav-text">Mensajes</span></a>
+    </div>
+    <div class="header-actions">
+      <clr-dropdown>
+        <button class="nav-text" clrDropdownTrigger aria-label="open user profile">
+          Administrador
+          <!-- <cds-icon shape="angle" direction="down"></cds-icon> -->
+        </button>
+        <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+          <a  clrDropdownItem>Ajustes</a>
+          <a  clrDropdownItem>Cerrar Sesión</a>
+        </clr-dropdown-menu>
+      </clr-dropdown>
+    </div>
+  </header>
+  <router-outlet></router-outlet>
+  
 
 
 
-<clr-modal [(clrModalOpen)]="basic">
-  <h3 class="modal-title">I have a nice title</h3>
-  <div class="modal-body">
-      <p>But not much to say...</p>
-  </div>
-  <div class="modal-footer">
-      <button type="button" class="btn btn-outline" (click)="basic = false">Cancel</button>
-      <button type="button" class="btn btn-primary" (click)="basic = false">Ok</button>
-  </div>
-</clr-modal>

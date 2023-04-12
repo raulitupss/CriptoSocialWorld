@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <ng-container *ngIf="publicaciones" >
+        <div class="card mb-3" *ngFor="let publicacion of publicaciones">
+          <div class="card-body">
+            <h5 class="card-title">{{publicacion._nombre}} Compartió:</h5>
+            <p class="card-text">{{publicacion._texto}}
+            </p>
+        </div>
+      </div>
+      </ng-container>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Tendencias</h5>
+            <ul class="list-group">
+              <li class="list-group-item">#Bitcoin</li>
+              <li class="list-group-item">#Elon Musk</li>
+              <li class="list-group-item">#DogeCoin</li>
+              <li class="list-group-item">#Etherium</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="btn-float" (click)="showModal = true">
+    Crear publicación 
+  </button>
+
+
+  <clr-modal [(clrModalOpen)]="showModal" [formGroup]="form">
+    <h3 class="modal-title">Nueva publicación</h3>
+    <div class="modal-body" >
+        <textarea formControlName="texto" style="width: 500px; height: 150px;" clrTextarea  name="description" required></textarea>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline" (click)="showModal = false">Cancelar</button>
+      <button type="button" class="btn btn-primary" (click)="postPublicacion()">Publicar</button>
+    </div>
+  </clr-modal>
